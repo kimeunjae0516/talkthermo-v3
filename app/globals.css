@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-background text-foreground min-h-screen;
+}
+
+.gradient-card {
+  background: linear-gradient(140deg, rgba(139, 156, 251, 0.22), rgba(17, 25, 53, 0.95));
+}
