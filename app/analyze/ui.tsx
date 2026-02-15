@@ -26,8 +26,11 @@ export function AnalyzeClient() {
 
   useEffect(() => { void load(); }, [load]);
 
-  const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-  const sttSupported = typeof window !== "undefined" && SpeechRecognition;
+  const SpeechRecognition =
+    typeof window !== "undefined"
+      ? (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition
+      : null;
+  const sttSupported = Boolean(SpeechRecognition);
 
   const personWarning = useMemo(() => "실명/민감정보 입력 금지", []);
 
